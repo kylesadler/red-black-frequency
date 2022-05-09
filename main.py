@@ -4,8 +4,10 @@ import random
 
 # number of red cards in the deck. Total number of cards in deck is 2n
 n = 26
-
-num_simulations = 10
+num_simulations = 20
+# color='cool'
+# color='jet'
+color='Blues'
 
 # "r" for red, "b" for black
 deck = ["r" for i in range(n)] + ["b" for i in range(n)]
@@ -32,19 +34,13 @@ for i in range(num_simulations):
 
     assert current_y == 0 and current_x == 0
 
-
-
-
 pyplot.figure(figsize=(5,5))
 
 pyplot.title(f"Game Paths with {n*2} Cards, games = {num_simulations}")
 pyplot.xlabel("Red")
 pyplot.ylabel("Black")
 
-# pyplot.imshow(data, cmap='jet')
-pyplot.imshow(data, cmap='Blues')
-# pyplot.imshow(data, cmap='cool')
+pyplot.imshow(data, cmap=color)
 pyplot.gca().invert_yaxis()
-
 
 pyplot.show()
